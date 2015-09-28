@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<regexEvaluator id="eded3678-5e57-4ec0-823a-6975424f10c6">
+  <descriptionCdata><![CDATA[]]></descriptionCdata>
+  <annotation></annotation>
+  <name>Scheduled Hours</name>
+  <entireString>true</entireString>
+  <expression>([1-9][0-9]?[0-9]?[0-9]?)</expression>
+  <ignoreCase>false</ignoreCase>
+  <multiLine>false</multiLine>
+  <regType>PERL5</regType>
+</regexEvaluator>

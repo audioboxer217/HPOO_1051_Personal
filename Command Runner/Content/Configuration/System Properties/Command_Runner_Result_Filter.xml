@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<systemProperty id="07bfbf0f-9dab-47cc-9e31-372fa076ad0c">
-  <descriptionCdata><![CDATA[07bfbf0f-9dab-47cc-9e31-372fa076ad0c.description=This list is used to delete lines from output results.  The values should be full words.  The list should be separated with the vertical bar ('|').
-]]></descriptionCdata>
-  <annotation>07bfbf0f-9dab-47cc-9e31-372fa076ad0c.description</annotation>
-  <name>Command_Runner_Result_Filter</name>
-  <value>{OBFUSCATED}xNlRINGza5ypeQu+TWQsFHSENpd3I69foKMPdt49vE+n2QGJT5Re0GLMFEHZJO8in7x38KwPN0NtppQYSoI+z6AYqofH4sOEk8DY+klIey4T525TaR4hxpQ8fdkGy+h5TGTy/uoFVWSLoETNRbuXPb2HZz2EWhlTzkMaoJafwvQ=</value>
-</systemProperty>

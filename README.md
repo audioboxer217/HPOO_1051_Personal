@@ -1,3 +1,3 @@
-# hpoo1050_test
+# HPOO 10.51 Personal
 
-This is a test of HPOO's new git functions
+This is my personal test repository for HPOO 10.51.  It will mostly just be used for testing and playing around with new things.

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="6c921aae-0ec6-49c1-bb67-d7769eeba445">
+  <descriptionCdata><![CDATA[6c921aae-0ec6-49c1-bb67-d7769eeba445.00be5bfd-0bea-48c9-b894-5c2d4143ebd3.prompt=The Change Ticket you entered ${ticketNum} doesn't exist, please enter the Change Tickect number where you want to store your configuration.
+6c921aae-0ec6-49c1-bb67-d7769eeba445.06c09c6a-4592-4569-81f5-9d66b7051a3d.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+6c921aae-0ec6-49c1-bb67-d7769eeba445.17f3669b-5c0d-4367-933b-26f5c48b847a.prompt=Enter the Change Tickect number where you want to store your configuration.
+6c921aae-0ec6-49c1-bb67-d7769eeba445.34ef9f8a-0284-43a7-b8cc-b80363822ba3.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+]]></descriptionCdata>
+  <annotation></annotation>
+  <name>TMP</name>
+  <categories/>
+  <inputs/>
+  <scriptlet id="3f318be2-b0eb-4118-8de4-1096d3e3a475">
+    <annotation></annotation>
+    <name>Operation TMP (6c921aae-0ec6-49c1-bb67-d7769eeba445)</name>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses/>
+  <availableResultExpressions/>
+  <resultExpression id="2cc5b2f0-887d-400f-9837-2568b4c6554c">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="f7d0abe8-9b84-494a-8e32-e887b724c5ee">
+    <baseIcon>flow.png</baseIcon>
+    <basePath>System</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="34ef9f8a-0284-43a7-b8cc-b80363822ba3">
+      <annotation>6c921aae-0ec6-49c1-bb67-d7769eeba445.34ef9f8a-0284-43a7-b8cc-b80363822ba3.description</annotation>
+      <name>Change Ticket Number Verification</name>
+      <bounds>
+        <x>429.0</x>
+        <y>45.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="231ea4d8-736f-4326-9f93-08e631b882d8">
+        <baseIcon>display_report.png</baseIcon>
+        <basePath>Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="00be5bfd-0bea-48c9-b894-5c2d4143ebd3">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>number</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <validationFormat>
+            <refId>196686c8-f6b8-4cef-b0cb-7e4cdf8953a5</refId>
+          </validationFormat>
+          <prompt>6c921aae-0ec6-49c1-bb67-d7769eeba445.00be5bfd-0bea-48c9-b894-5c2d4143ebd3.prompt</prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions/>
+      <properties/>
+      <opRef>
+        <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="1fe81b36-d5f5-45d0-967b-d30b0a627bae">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ticketNum</contextKey>
+          <expression id="f5d35d0d-17a1-4491-be2a-8f4bd7004833">
+            <annotation></annotation>
+            <name>Input: number</name>
+            <fieldName>number</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="0a985716-337f-4b91-9a67-83e11df5dafc">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>ticketNum</contextKey>
+          <expression id="e9260a48-3897-494e-86b4-a0d00729f70f">
+            <annotation></annotation>
+            <name>Input: number</name>
+            <fieldName>number</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="06c09c6a-4592-4569-81f5-9d66b7051a3d">
+      <annotation>6c921aae-0ec6-49c1-bb67-d7769eeba445.06c09c6a-4592-4569-81f5-9d66b7051a3d.description</annotation>
+      <name>Select Change Ticket Number</name>
+      <bounds>
+        <x>265.0</x>
+        <y>226.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="04fe05ba-2587-4e8b-9aad-3b32ab6acda3">
+        <baseIcon>display_report.png</baseIcon>
+        <basePath>Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="17f3669b-5c0d-4367-933b-26f5c48b847a">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>number</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <validationFormat>
+            <refId>196686c8-f6b8-4cef-b0cb-7e4cdf8953a5</refId>
+          </validationFormat>
+          <prompt>6c921aae-0ec6-49c1-bb67-d7769eeba445.17f3669b-5c0d-4367-933b-26f5c48b847a.prompt</prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <sourceDelimiter>|</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions/>
+      <properties/>
+      <opRef>
+        <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="904914b2-3b31-436c-99cd-b4edb294e34a">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ticketNum</contextKey>
+          <expression id="8a8d6357-cb0a-42cb-b1d1-4e0d640f9152">
+            <annotation></annotation>
+            <name>Input: number</name>
+            <fieldName>number</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="1675b79f-a40b-4ebd-98a4-fc55f2f36a93">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>ticketNum</contextKey>
+          <expression id="085f2414-ebd3-4fa9-b45a-c12c5f2be22e">
+            <annotation></annotation>
+            <name>Input: number</name>
+            <fieldName>number</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+  </steps>
+</flow>

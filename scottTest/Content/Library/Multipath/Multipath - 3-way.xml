@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="ef6e90c0-e4ba-4c56-924f-adef0dbf981e">
+  <descriptionCdata><![CDATA[ef6e90c0-e4ba-4c56-924f-adef0dbf981e.description=<pre>\nTakes a test case and compares it against 2 options.  If neither match the 'default' option is taken\n\nInputs\:\n    testCase - The item to check in order to determine which option to choose\n    option1 - The first option that can be taken\n    option2 - The second option that can be taken\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    path1 - If 'testCase' matches 'option1'\n    path2 - If 'testCase' matches 'option2'\n    default - If 'testCase' matches neither 'option1' or 'option2' but is a valid string\n</pre>
+]]></descriptionCdata>
+  <annotation>ef6e90c0-e4ba-4c56-924f-adef0dbf981e.description</annotation>
+  <name>Multipath - 3-way</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="11f4cd8b-9855-4509-8299-09050cc1e184">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>testCase</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="ab8f6ef4-b4ff-4ba4-935c-1c9be5469dd5">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>option1</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="479ac4bd-ce77-43dc-be8b-fd0750af72a8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>option2</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <userInputBinding id="450ccd25-6043-4bd1-bd5e-f2e0f96675de">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ignoreCase</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <link>
+        <refId>96a1ed25-cdc9-4ff6-8fba-e9c044c5ca53</refId>
+        <refName>Boolean - False Default</refName>
+      </link>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <scriptlet id="9c764cfa-f7af-4d58-abf5-1a55643b757a">
+    <annotation></annotation>
+    <name>Operation Multipath - 3-way (417a97c9-19d7-4453-8aa8-613cc5049722)</name>
+    <script>//Check if we need to ignore case and set inputs accordingly.
+iC = ignoreCase.toLowerCase()
+if (iC == &apos;true&apos;){
+	tC = testCase.toLowerCase(); 
+	options = [&apos;pad&apos;,option1.toLowerCase(),option2.toLowerCase()]
+
+}
+else{
+	tC = testCase;
+	//&apos;pad&apos; is so that the option numbers match up with their names in the loop 
+	options = [&apos;pad&apos;,option1,option2]
+}
+
+//Loop through the options to look for a match to testCase
+found = &apos;false&apos;;
+for (i = 1; i &lt; options.length; i++) { 
+    if (options[i].indexOf(tC) &gt; -1){
+		scriptletResult = &quot;Matched option&quot; + i; 
+		scriptletResponse = &quot;path&quot; + i;
+		found = i;
+		break;
+	}
+}
+
+//If no match is found use the &apos;default&apos; path.  Otherwise you the matched path.
+if (found == &apos;false&apos;){
+	scriptletResult = &quot;Did not match either option&quot;;
+	scriptletResponse = &quot;default&quot;;
+}
+else{
+	scriptletResult = &quot;Matched option&quot; + found; 
+	scriptletResponse = &quot;path&quot; + found;
+}</script>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses>
+    <opResponse id="be735d02-5412-495a-b77e-154a9e556037">
+      <annotation></annotation>
+      <name>path1</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="432c4d52-0fe3-4f45-80b8-70e23a70fa78">
+      <annotation></annotation>
+      <name>path2</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="e5bb9354-973e-48b1-863e-88f9ee3e9fd0">
+      <annotation></annotation>
+      <name>default</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="9e864e18-a37b-4187-8347-87b2e1fe569e">
+    <annotation></annotation>
+    <name>returnCode</name>
+    <fieldName>returnCode</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="cee3085a-121f-48cb-8a17-8b10292b3d12">
+    <baseIcon>compare.png</baseIcon>
+    <basePath>/Utilities/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <plugin>
+    <groupId>com.hp.oo</groupId>
+    <artifactId>oo-base-plugin</artifactId>
+    <version>1.5.3</version>
+    <actionName>noOp</actionName>
+  </plugin>
+  <fieldValues/>
+  <groupAliasRef>
+    <refId>5233030c-af46-432b-a682-b326ca6bf2ae</refId>
+    <refName>RAS_Operator_Path</refName>
+  </groupAliasRef>
+</operation>

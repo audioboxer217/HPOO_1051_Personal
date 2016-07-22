@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<operation id="2c033661-696c-4e94-bf63-34993331b8d5">
+  <descriptionCdata><![CDATA[2c033661-696c-4e94-bf63-34993331b8d5.description=<pre>\nTakes a test case and compares it against 2 options.  If neither match the 'default' option is taken\n\nInputs\:\n    testCase - The item to check in order to determine which option to choose\n    option1 - The first option that can be taken\n    option2 - The second option that can be taken\n    option3 - The third option that can be taken\n    ignoreCase - If set to 'true', then the comparison ignores case considerations. The two strings are considered equal ignoring case if they are of the same length and corresponding characters in the two strings are equal ignoring case. If set to any value other than 'true', then the strings must match exactly to be considered equal.\n\nResponses\:\n    path1 - If 'testCase' matches 'option1'\n    path2 - If 'testCase' matches 'option2'\n    path3 - If 'testCase' matches 'option3'\n    default - If 'testCase' matches neither 'option1' or 'option2' but is a valid string\n</pre>
+]]></descriptionCdata>
+  <annotation>2c033661-696c-4e94-bf63-34993331b8d5.description</annotation>
+  <name>Multipath - 4-way</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="8f52c355-219d-43f5-990f-0c0e0b7ea4b9">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>testCase</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="df2afffb-296f-444e-81a3-fac90658d9f8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>option1</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="e40fc639-296d-492c-a9f8-48aa1b420433">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>option2</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <staticBinding id="a5f9faff-187e-419c-b991-1f24e339ce3d">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>option3</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value></value>
+      <record>false</record>
+    </staticBinding>
+    <userInputBinding id="3edb00df-5bb8-4118-bd2a-9afebf8415b8">
+      <annotation></annotation>
+      <assignFromContext>false</assignFromContext>
+      <assignToContext>false</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>ignoreCase</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <record>false</record>
+      <prompt></prompt>
+      <isMultiSelect>false</isMultiSelect>
+      <link>
+        <refId>96a1ed25-cdc9-4ff6-8fba-e9c044c5ca53</refId>
+        <refName>Boolean - False Default</refName>
+      </link>
+      <sourceDelimiter>|</sourceDelimiter>
+    </userInputBinding>
+  </inputs>
+  <scriptlet id="06b2b503-d139-463a-90a6-e8fd3212cc9e">
+    <annotation></annotation>
+    <name>Operation Multipath - 4-way (9eb1e0db-dbcd-47e9-941a-946224c569cc)</name>
+    <script>//Check if we need to ignore case and set inputs accordingly.
+iC = ignoreCase.toLowerCase()
+if (iC == &apos;true&apos;){
+	tC = testCase.toLowerCase(); 
+	options = [&apos;pad&apos;,option1.toLowerCase(),option2.toLowerCase(),option3.toLowerCase()]
+
+}
+else{
+	tC = testCase;
+	//&apos;pad&apos; is so that the option numbers match up with their names in the loop 
+	options = [&apos;pad&apos;,option1,option2,option3]
+}
+
+//Loop through the options to look for a match to testCase
+found = &apos;false&apos;;
+for (i = 1; i &lt; options.length; i++) { 
+    if (options[i].indexOf(tC) &gt; -1){
+		scriptletResult = &quot;Matched option&quot; + i; 
+		scriptletResponse = &quot;path&quot; + i;
+		found = i;
+		break;
+	}
+}
+
+//If no match is found use the &apos;default&apos; path.  Otherwise you the matched path.
+if (found == &apos;false&apos;){
+	scriptletResult = &quot;Did not match either option&quot;;
+	scriptletResponse = &quot;default&quot;;
+}
+else{
+	scriptletResult = &quot;Matched option&quot; + found; 
+	scriptletResponse = &quot;path&quot; + found;
+}</script>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses>
+    <opResponse id="154bb68a-c3dc-4875-8d39-934b94aabe09">
+      <annotation></annotation>
+      <name>path1</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="55d7f480-d913-4020-ae0a-04e18f80c6a8">
+      <annotation></annotation>
+      <name>path2</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="c8ebe557-d113-4fe4-aa56-8c0066c1c50e">
+      <annotation></annotation>
+      <name>path3</name>
+      <isDefault>false</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+    <opResponse id="bb6f06bb-1218-4e88-abc9-ad7559c47556">
+      <annotation></annotation>
+      <name>default</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="cb38a7dd-050c-4799-af3c-c396a02bf099">
+    <annotation></annotation>
+    <name>returnCode</name>
+    <fieldName>returnCode</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="a24e3363-488c-4bca-b60a-6dd3ca8d087b">
+    <baseIcon>compare.png</baseIcon>
+    <basePath>/Utilities/</basePath>
+    <readOnly>false</readOnly>
+    <layers/>
+  </iconSpec>
+  <opRef>
+    <refId>417a97c9-19d7-4453-8aa8-613cc5049722</refId>
+  </opRef>
+  <fieldValues/>
+  <groupAliasRef>
+    <refId>5233030c-af46-432b-a682-b326ca6bf2ae</refId>
+    <refName>RAS_Operator_Path</refName>
+  </groupAliasRef>
+</operation>

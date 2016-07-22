@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow id="151250ee-9ffb-4a9d-ba83-175a5cc3085c">
+  <descriptionCdata><![CDATA[151250ee-9ffb-4a9d-ba83-175a5cc3085c.2d1d8081-8bde-42b7-b8fa-bcc4a95c98c3.prompt=Please select device from the device-list.
+151250ee-9ffb-4a9d-ba83-175a5cc3085c.5519fb2d-f4c5-49ac-9d61-b341b414992d.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+151250ee-9ffb-4a9d-ba83-175a5cc3085c.b1360a4e-d1e3-42ae-b908-14fcd5e772be.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+151250ee-9ffb-4a9d-ba83-175a5cc3085c.description=This flow gets the devices from a set list of Device Groups and adds them to the "Qualified Devices" view in the Bulk Load DB\n\nInputs\:\ngroupList - The list of HPNA Device Groups to get devices from.\nNACoreList - The list of HPNA Core servers to check for Device Groups\n\nOutputs\:\nfailedGroups - A list of groups that failed for any reason
+]]></descriptionCdata>
+  <annotation>151250ee-9ffb-4a9d-ba83-175a5cc3085c.description</annotation>
+  <name>Process HPNA Devices (SP)</name>
+  <categories/>
+  <inputs>
+    <staticBinding id="434b17f3-7f83-450e-b3c8-90f3636c6c9a">
+      <annotation></annotation>
+      <assignFromContext>true</assignFromContext>
+      <assignToContext>true</assignToContext>
+      <inputType>STRING</inputType>
+      <isList>false</isList>
+      <required>true</required>
+      <isPersisted>true</isPersisted>
+      <inputSymbol>naSessionId</inputSymbol>
+      <listDelimiter>,</listDelimiter>
+      <value>Unassigned</value>
+      <record>false</record>
+    </staticBinding>
+  </inputs>
+  <scriptlet id="35872917-0a7d-45bd-a9c4-0480f567f025">
+    <annotation></annotation>
+    <name>Operation Process HPNA Devices (SP) (151250ee-9ffb-4a9d-ba83-175a5cc3085c)</name>
+    <type>RHINO</type>
+  </scriptlet>
+  <possibleResponses>
+    <opResponse id="602d6de6-05e6-449a-b98e-d7564cd07322">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
+  <availableResultExpressions/>
+  <resultExpression id="d5f06943-ebd8-4644-b100-9f8c57807bbf">
+    <annotation></annotation>
+    <name>FailureMessage</name>
+    <fieldName>FailureMessage</fieldName>
+    <sourceType>RAWRESULT</sourceType>
+    <filters/>
+  </resultExpression>
+  <iconSpec id="6a1291e3-0e91-4c05-bad6-c4479acd5bb0">
+    <baseIcon>harddisk_network.png</baseIcon>
+    <basePath>/Networking/</basePath>
+    <readOnly>false</readOnly>
+    <layers>
+      <iconSpec id="638b026e-3cd8-49bd-8fba-21f55a41e02b">
+        <baseIcon>refresh.png</baseIcon>
+        <basePath>/Annotations/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+    </layers>
+  </iconSpec>
+  <callouts/>
+  <checkPointFlow>true</checkPointFlow>
+  <compatibleRuntimeContext>false</compatibleRuntimeContext>
+  <historyCheckPointFlow>true</historyCheckPointFlow>
+  <steps>
+    <step id="b1360a4e-d1e3-42ae-b908-14fcd5e772be">
+      <annotation>151250ee-9ffb-4a9d-ba83-175a5cc3085c.b1360a4e-d1e3-42ae-b908-14fcd5e772be.description</annotation>
+      <name>Get deviceNames and deviceIDs</name>
+      <bounds>
+        <x>0.0</x>
+        <y>0.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <staticBinding id="4b2f4a09-a4b0-4cd7-88ee-01296c6bbbe7">
+          <annotation></annotation>
+          <fromContextKey>NA Command Script/HPNA_Device_List</fromContextKey>
+          <assignFromContext>true</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>deviceTable</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <value></value>
+          <record>false</record>
+        </staticBinding>
+      </bindings>
+      <transitions>
+        <transition id="93634c5b-408c-499f-a6ff-27e9c3d7cb20">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>5519fb2d-f4c5-49ac-9d61-b341b414992d</refId>
+          </destination>
+          <source>
+            <refId>b1360a4e-d1e3-42ae-b908-14fcd5e772be</refId>
+          </source>
+          <positions>
+            <point>
+              <x>50.0</x>
+              <y>34.0</y>
+            </point>
+            <point>
+              <x>220.0</x>
+              <y>34.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="ed70b0e3-3637-4fdc-bf2e-e67eefb08623">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>deviceIDs</contextKey>
+          <expression id="dc00ab82-2b86-4d5f-a323-6b9fc56027e3">
+            <annotation></annotation>
+            <name>Input: deviceTable</name>
+            <fieldName>deviceTable</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters>
+              <replaceAllFilter id="290f6bc5-45ac-4afb-aa5a-9be1d696d3c4">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>|</searchString>
+                <replaceString>
+</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <selectLineFilter id="02676f04-5d11-4d5c-868b-6540d7c1f915">
+                <annotation></annotation>
+                <name>Select Line</name>
+                <text>0</text>
+                <type>LINE_NUMBER_(STARTING_FROM_0)</type>
+                <autoSelectLineEnding>false</autoSelectLineEnding>
+                <windowsLineEnding>false</windowsLineEnding>
+                <unixLineEnding>true</unixLineEnding>
+              </selectLineFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="3d000487-23c6-46d2-a5b3-6f815d58f0cf">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>deviceNames</contextKey>
+          <expression id="236bb402-8346-4758-85c3-2136edec30de">
+            <annotation></annotation>
+            <name>Input: deviceTable</name>
+            <fieldName>deviceTable</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters>
+              <replaceAllFilter id="8eb26faf-a603-44fa-9ffb-7cd6e07408e4">
+                <annotation></annotation>
+                <name>Replace</name>
+                <ignoreCase>false</ignoreCase>
+                <searchString>|</searchString>
+                <replaceString>
+</replaceString>
+                <replaceType>ALL</replaceType>
+              </replaceAllFilter>
+              <selectLineFilter id="e559716b-3faf-4e67-89a4-fa18595f6465">
+                <annotation></annotation>
+                <name>Select Line</name>
+                <text>1</text>
+                <type>LINE_NUMBER_(STARTING_FROM_0)</type>
+                <autoSelectLineEnding>false</autoSelectLineEnding>
+                <windowsLineEnding>false</windowsLineEnding>
+                <unixLineEnding>true</unixLineEnding>
+              </selectLineFilter>
+            </filters>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <step id="5519fb2d-f4c5-49ac-9d61-b341b414992d">
+      <annotation>151250ee-9ffb-4a9d-ba83-175a5cc3085c.5519fb2d-f4c5-49ac-9d61-b341b414992d.description</annotation>
+      <name>Prompt user for Devices</name>
+      <bounds>
+        <x>130.0</x>
+        <y>0.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <iconSpec id="51a3f344-fc8b-49ca-99c1-800fa3c746d9">
+        <baseIcon>display_report.png</baseIcon>
+        <basePath>Utilities/</basePath>
+        <readOnly>false</readOnly>
+        <layers/>
+      </iconSpec>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings>
+        <userInputBinding id="2d1d8081-8bde-42b7-b8fa-bcc4a95c98c3">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>true</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>true</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>selectedDeviceName</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+          <prompt>151250ee-9ffb-4a9d-ba83-175a5cc3085c.2d1d8081-8bde-42b7-b8fa-bcc4a95c98c3.prompt</prompt>
+          <isMultiSelect>false</isMultiSelect>
+          <dynPickListKey>deviceNames</dynPickListKey>
+          <sourceDelimiter>,</sourceDelimiter>
+        </userInputBinding>
+      </bindings>
+      <transitions>
+        <transition id="b14d7835-53ac-4e2f-8a61-7cf57342fda9">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>fa81ff59-3f58-4a11-9f1b-f00174e59442</refId>
+          </destination>
+          <source>
+            <refId>5519fb2d-f4c5-49ac-9d61-b341b414992d</refId>
+          </source>
+          <positions>
+            <point>
+              <x>824.0</x>
+              <y>362.0</y>
+            </point>
+            <point>
+              <x>920.0</x>
+              <y>334.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
+      <properties/>
+      <opRef>
+        <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
+      </opRef>
+      <assignments>
+        <flowVariableAssignment id="d11b386c-6210-46a6-af0b-ed6b33811afb">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>rSelectedDeviceName</contextKey>
+          <expression id="ede6f4cd-8e1a-469a-9810-6265c704d6d8">
+            <annotation></annotation>
+            <name>Input: selectedDeviceName</name>
+            <fieldName>selectedDeviceName</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+        <flowVariableAssignment id="fe1eee1f-13d9-44d7-8691-64fc26707a0b">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
+          <contextKey>rSelectedDeviceName</contextKey>
+          <expression id="aef3c6e0-8ac7-41b1-bf78-d08b8e825de4">
+            <annotation></annotation>
+            <name>Input: selectedDeviceName</name>
+            <fieldName>selectedDeviceName</fieldName>
+            <sourceType>INPUT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
+      <throttleSize>0</throttleSize>
+    </step>
+    <returnStep id="fa81ff59-3f58-4a11-9f1b-f00174e59442">
+      <annotation></annotation>
+      <name>Resolved : success</name>
+      <bounds>
+        <x>260.0</x>
+        <y>0.0</y>
+      </bounds>
+      <layer>-1</layer>
+      <hideInbound>false</hideInbound>
+      <addResultToRunContext>false</addResultToRunContext>
+      <isCriticalStep>false</isCriticalStep>
+      <isNonBlocking>false</isNonBlocking>
+      <isParallelStep>false</isParallelStep>
+      <isSingleResponse>false</isSingleResponse>
+      <recordInHistory>false</recordInHistory>
+      <recordRawOutput>true</recordRawOutput>
+      <recordPrimaryOutput>true</recordPrimaryOutput>
+      <checkPointStep>true</checkPointStep>
+      <historyCheckPointStep>true</historyCheckPointStep>
+      <scriptResultStep>false</scriptResultStep>
+      <userPrompt></userPrompt>
+      <bindings/>
+      <transitions>
+        <transition id="cdcc0ed0-2445-49d9-896d-5a805e6f4ad5">
+          <annotation></annotation>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>fa81ff59-3f58-4a11-9f1b-f00174e59442</refId>
+          </destination>
+          <source>
+            <refId>fa81ff59-3f58-4a11-9f1b-f00174e59442</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
+      <properties/>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
+  </steps>
+  <startSteps>b1360a4e-d1e3-42ae-b908-14fcd5e772be</startSteps>
+</flow>

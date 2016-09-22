@@ -9,7 +9,12 @@
     <dependency>
       <groupId>DEFAULT</groupId>
       <artifactId>Base</artifactId>
-      <version>[1.6.2]</version>
+      <version>[1.9.0]</version>
+    </dependency>
+    <dependency>
+      <groupId>DEFAULT</groupId>
+      <artifactId>HPE Solutions</artifactId>
+      <version>[1.9.0]</version>
     </dependency>
   </dependencies>
 </project>

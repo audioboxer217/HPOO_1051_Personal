@@ -67,7 +67,7 @@
   </inputs>
   <scriptlet id="9c764cfa-f7af-4d58-abf5-1a55643b757a">
     <annotation></annotation>
-    <name>Operation Multipath - 3-way (417a97c9-19d7-4453-8aa8-613cc5049722)</name>
+    <name>Operation Multipath - 3-way (ef6e90c0-e4ba-4c56-924f-adef0dbf981e)</name>
     <script>//Check if we need to ignore case and set inputs accordingly.
 iC = ignoreCase.toLowerCase()
 if (iC == &apos;true&apos;){
@@ -146,7 +146,7 @@ else{
   <plugin>
     <groupId>com.hp.oo</groupId>
     <artifactId>oo-base-plugin</artifactId>
-    <version>1.5.3</version>
+    <version>1.9.0</version>
     <actionName>noOp</actionName>
   </plugin>
   <fieldValues/>

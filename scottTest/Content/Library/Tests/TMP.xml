@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow id="6c921aae-0ec6-49c1-bb67-d7769eeba445">
-  <descriptionCdata><![CDATA[6c921aae-0ec6-49c1-bb67-d7769eeba445.00be5bfd-0bea-48c9-b894-5c2d4143ebd3.prompt=The Change Ticket you entered ${ticketNum} doesn't exist, please enter the Change Tickect number where you want to store your configuration.
-6c921aae-0ec6-49c1-bb67-d7769eeba445.06c09c6a-4592-4569-81f5-9d66b7051a3d.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
-6c921aae-0ec6-49c1-bb67-d7769eeba445.17f3669b-5c0d-4367-933b-26f5c48b847a.prompt=Enter the Change Tickect number where you want to store your configuration.
-6c921aae-0ec6-49c1-bb67-d7769eeba445.34ef9f8a-0284-43a7-b8cc-b80363822ba3.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+  <descriptionCdata><![CDATA[6c921aae-0ec6-49c1-bb67-d7769eeba445.974517e2-380c-47a3-927e-895851561fc8.description=<pre>\nThis operation does not do anything. It can be used to filter flow variables by defining them as inputs and filtering them in the Results tab.\n\nInputs\:\n    field1 \u2013 An optional input that can be used for filtering flow variables.\n    field2 \u2013 An optional input that can be used for filtering flow variables.\n    field3 \u2013 An optional input that can be used for filtering flow variables.\n    field4 \u2013 An optional input that can be used for filtering flow variables.\n\nResults\:\n    returnResult - This is the primary output. It contains the value of  "field1" as it was specified at input or when filtered. \n\nResponses\:\n    success - The operation completed as stated in the description.\n</pre>
+6c921aae-0ec6-49c1-bb67-d7769eeba445.description=Temporary Holding Place for operations
 ]]></descriptionCdata>
-  <annotation></annotation>
+  <annotation>6c921aae-0ec6-49c1-bb67-d7769eeba445.description</annotation>
   <name>TMP</name>
   <categories/>
   <inputs/>
-  <scriptlet id="3f318be2-b0eb-4118-8de4-1096d3e3a475">
-    <annotation></annotation>
-    <name>Operation TMP (6c921aae-0ec6-49c1-bb67-d7769eeba445)</name>
-    <type>RHINO</type>
-  </scriptlet>
-  <possibleResponses/>
+  <possibleResponses>
+    <opResponse id="f3e3012d-ef03-4460-82e6-d54fd6a8f523">
+      <annotation></annotation>
+      <name>success</name>
+      <isDefault>true</isDefault>
+      <onFailure>false</onFailure>
+      <type>RESOLVED</type>
+      <matchRules/>
+    </opResponse>
+  </possibleResponses>
   <availableResultExpressions/>
   <resultExpression id="2cc5b2f0-887d-400f-9837-2568b4c6554c">
     <annotation></annotation>
@@ -34,21 +36,15 @@
   <compatibleRuntimeContext>false</compatibleRuntimeContext>
   <historyCheckPointFlow>true</historyCheckPointFlow>
   <steps>
-    <step id="34ef9f8a-0284-43a7-b8cc-b80363822ba3">
-      <annotation>6c921aae-0ec6-49c1-bb67-d7769eeba445.34ef9f8a-0284-43a7-b8cc-b80363822ba3.description</annotation>
-      <name>Change Ticket Number Verification</name>
+    <step id="974517e2-380c-47a3-927e-895851561fc8">
+      <annotation>6c921aae-0ec6-49c1-bb67-d7769eeba445.974517e2-380c-47a3-927e-895851561fc8.description</annotation>
+      <name>Do Nothing</name>
       <bounds>
-        <x>429.0</x>
-        <y>45.0</y>
+        <x>0.0</x>
+        <y>0.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="231ea4d8-736f-4326-9f93-08e631b882d8">
-        <baseIcon>display_report.png</baseIcon>
-        <basePath>Utilities/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -62,77 +58,102 @@
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
       <bindings>
-        <userInputBinding id="00be5bfd-0bea-48c9-b894-5c2d4143ebd3">
+        <staticBinding id="365992b1-579b-4038-8da0-aeafedb6af0c">
           <annotation></annotation>
           <assignFromContext>false</assignFromContext>
-          <assignToContext>true</assignToContext>
+          <assignToContext>false</assignToContext>
           <inputType>STRING</inputType>
           <isList>false</isList>
-          <required>true</required>
+          <required>false</required>
           <isPersisted>true</isPersisted>
-          <inputSymbol>number</inputSymbol>
+          <inputSymbol>field1</inputSymbol>
           <listDelimiter>,</listDelimiter>
           <record>false</record>
-          <validationFormat>
-            <refId>196686c8-f6b8-4cef-b0cb-7e4cdf8953a5</refId>
-          </validationFormat>
-          <prompt>6c921aae-0ec6-49c1-bb67-d7769eeba445.00be5bfd-0bea-48c9-b894-5c2d4143ebd3.prompt</prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
+        </staticBinding>
+        <staticBinding id="d8a5f91c-4dd4-439e-8b35-b1c3488b36d9">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>field2</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="b2b52695-9a08-45ac-8d40-adc0ba7cab21">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>field3</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
+        <staticBinding id="95d540df-8f35-41f5-aa62-bc17645ee7d4">
+          <annotation></annotation>
+          <assignFromContext>false</assignFromContext>
+          <assignToContext>false</assignToContext>
+          <inputType>STRING</inputType>
+          <isList>false</isList>
+          <required>false</required>
+          <isPersisted>true</isPersisted>
+          <inputSymbol>field4</inputSymbol>
+          <listDelimiter>,</listDelimiter>
+          <record>false</record>
+        </staticBinding>
       </bindings>
-      <transitions/>
+      <transitions>
+        <transition id="a6f55737-c7ec-454f-ab73-3df37c953869">
+          <annotation></annotation>
+          <name>success</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>9202ff7e-f3be-4351-bdfa-b76d168e806a</refId>
+          </destination>
+          <source>
+            <refId>974517e2-380c-47a3-927e-895851561fc8</refId>
+          </source>
+          <positions>
+            <point>
+              <x>50.0</x>
+              <y>34.0</y>
+            </point>
+            <point>
+              <x>635.0</x>
+              <y>34.0</y>
+            </point>
+          </positions>
+          <labelPosition>
+            <x>333.0</x>
+            <y>0.0</y>
+          </labelPosition>
+        </transition>
+      </transitions>
       <properties/>
       <opRef>
         <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
       </opRef>
-      <assignments>
-        <flowVariableAssignment id="1fe81b36-d5f5-45d0-967b-d30b0a627bae">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>ticketNum</contextKey>
-          <expression id="f5d35d0d-17a1-4491-be2a-8f4bd7004833">
-            <annotation></annotation>
-            <name>Input: number</name>
-            <fieldName>number</fieldName>
-            <sourceType>INPUT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="0a985716-337f-4b91-9a67-83e11df5dafc">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>ticketNum</contextKey>
-          <expression id="e9260a48-3897-494e-86b4-a0d00729f70f">
-            <annotation></annotation>
-            <name>Input: number</name>
-            <fieldName>number</fieldName>
-            <sourceType>INPUT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
+      <assignments/>
       <throttleSize>0</throttleSize>
     </step>
-    <step id="06c09c6a-4592-4569-81f5-9d66b7051a3d">
-      <annotation>6c921aae-0ec6-49c1-bb67-d7769eeba445.06c09c6a-4592-4569-81f5-9d66b7051a3d.description</annotation>
-      <name>Select Change Ticket Number</name>
+    <returnStep id="9202ff7e-f3be-4351-bdfa-b76d168e806a">
+      <annotation></annotation>
+      <name>Resolved : success</name>
       <bounds>
-        <x>265.0</x>
-        <y>226.0</y>
+        <x>585.0</x>
+        <y>0.0</y>
       </bounds>
       <layer>-1</layer>
       <hideInbound>false</hideInbound>
-      <iconSpec id="04fe05ba-2587-4e8b-9aad-3b32ab6acda3">
-        <baseIcon>display_report.png</baseIcon>
-        <basePath>Utilities/</basePath>
-        <readOnly>false</readOnly>
-        <layers/>
-      </iconSpec>
       <addResultToRunContext>false</addResultToRunContext>
       <isCriticalStep>false</isCriticalStep>
       <isNonBlocking>false</isNonBlocking>
@@ -145,62 +166,29 @@
       <historyCheckPointStep>true</historyCheckPointStep>
       <scriptResultStep>false</scriptResultStep>
       <userPrompt></userPrompt>
-      <bindings>
-        <userInputBinding id="17f3669b-5c0d-4367-933b-26f5c48b847a">
+      <bindings/>
+      <transitions>
+        <transition id="e0ffd947-45cd-4785-b840-a0117ce97e57">
           <annotation></annotation>
-          <assignFromContext>false</assignFromContext>
-          <assignToContext>true</assignToContext>
-          <inputType>STRING</inputType>
-          <isList>false</isList>
-          <required>true</required>
-          <isPersisted>true</isPersisted>
-          <inputSymbol>number</inputSymbol>
-          <listDelimiter>,</listDelimiter>
-          <record>false</record>
-          <validationFormat>
-            <refId>196686c8-f6b8-4cef-b0cb-7e4cdf8953a5</refId>
-          </validationFormat>
-          <prompt>6c921aae-0ec6-49c1-bb67-d7769eeba445.17f3669b-5c0d-4367-933b-26f5c48b847a.prompt</prompt>
-          <isMultiSelect>false</isMultiSelect>
-          <sourceDelimiter>|</sourceDelimiter>
-        </userInputBinding>
-      </bindings>
-      <transitions/>
+          <name>return</name>
+          <command>NEXT</command>
+          <linkMode>false</linkMode>
+          <responseSymbol>success</responseSymbol>
+          <shouldHandoff>false</shouldHandoff>
+          <transitionValue>0.0</transitionValue>
+          <destination>
+            <refId>9202ff7e-f3be-4351-bdfa-b76d168e806a</refId>
+          </destination>
+          <source>
+            <refId>9202ff7e-f3be-4351-bdfa-b76d168e806a</refId>
+          </source>
+          <positions/>
+        </transition>
+      </transitions>
       <properties/>
-      <opRef>
-        <refId>ddd79f22-8b1e-4605-88d5-d912bb2da2b9</refId>
-      </opRef>
-      <assignments>
-        <flowVariableAssignment id="904914b2-3b31-436c-99cd-b4edb294e34a">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
-          <contextKey>ticketNum</contextKey>
-          <expression id="8a8d6357-cb0a-42cb-b1d1-4e0d640f9152">
-            <annotation></annotation>
-            <name>Input: number</name>
-            <fieldName>number</fieldName>
-            <sourceType>INPUT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-        <flowVariableAssignment id="1675b79f-a40b-4ebd-98a4-fc55f2f36a93">
-          <annotation></annotation>
-          <name>assignment</name>
-          <action>OVERWRITE</action>
-          <assignmentTargetType>FLOW_OUTPUT_FIELD</assignmentTargetType>
-          <contextKey>ticketNum</contextKey>
-          <expression id="085f2414-ebd3-4fa9-b45a-c12c5f2be22e">
-            <annotation></annotation>
-            <name>Input: number</name>
-            <fieldName>number</fieldName>
-            <sourceType>INPUT</sourceType>
-            <filters/>
-          </expression>
-        </flowVariableAssignment>
-      </assignments>
-      <throttleSize>0</throttleSize>
-    </step>
+      <returnStepType>RESOLVED</returnStepType>
+      <assignments/>
+    </returnStep>
   </steps>
+  <startSteps>974517e2-380c-47a3-927e-895851561fc8</startSteps>
 </flow>
